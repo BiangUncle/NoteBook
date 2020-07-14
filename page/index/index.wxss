@@ -1,0 +1,578 @@
+page,
+input,
+view,
+img,
+icon {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: '"SF Pro SC","HanHei SC","SF Pro Text","Myriad Set Pro",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","SF Pro Icons","Apple Legacy Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif';
+  transition: all 0.2s ease-out;
+}
+page {
+  background-color: #C0ECFF;
+}
+.top {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.top .container {
+  width: 240rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background-color: #545395;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 32rpx;
+  line-height: 32rpx;
+  align-items: center;
+}
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.list .both {
+  position: relative;
+  margin: 15rpx;
+}
+.list .both .listcontainer {
+  position: relative;
+  z-index: 2;
+  width: 600rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  display: flex;
+  align-items: center;
+  background-color: #8082F6;
+  padding: 0 30rpx;
+  box-shadow: 15rpx 15rpx 30rpx rgba(0, 0, 0, 0.2);
+}
+.list .both .listcontainer icon {
+  font-size: 50rpx;
+  color: white;
+}
+.list .both .listcontainer .title {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  width: 320rpx;
+  margin-left: 15rpx;
+  font-size: 40rpx;
+  color: white;
+}
+.list .both .listcontainer .valuecontainer {
+  height: 40rpx;
+  width: 150rpx;
+  background-color: #fff;
+  border-radius: 25rpx;
+}
+.list .both .listcontainer .valuecontainer .value {
+  float: right;
+  height: 40rpx;
+  width: 60rpx;
+  border-radius: 25rpx;
+  background-color: #FFA3A3;
+}
+.list .both .background {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  border-radius: 50rpx;
+  background-color: #545395;
+  display: flex;
+  flex-direction: column;
+}
+.list .both .background .iconcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  border-radius: 50rpx;
+  width: 600rpx;
+  padding: 0 30rpx;
+}
+.list .both .background .iconcontainer icon {
+  font-size: 50rpx;
+  color: #FFA3A3;
+  z-index: 5;
+}
+.list .both .background .detail {
+  color: white;
+  height: 220rpx;
+  width: 600rpx;
+  padding: 30rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.list .both .background .time {
+  border-top: 2rpx solid #999999;
+  color: #999999;
+  height: 80rpx;
+  width: 600rpx;
+  padding: 0 30rpx;
+  line-height: 80rpx;
+  vertical-align: middle;
+  text-align: center;
+}
+.list span {
+  margin-top: 50rpx;
+  font-size: 300rpx;
+  color: #545395;
+}
+.list .wenben {
+  font-size: 50rpx;
+  color: #545395;
+}
+.controlPanel {
+  position: fixed;
+  width: 200rpx;
+  height: 100rpx;
+  background-color: #8082F6;
+  border-radius: 50rpx 0 0 50rpx;
+  bottom: 200rpx;
+  right: -100rpx;
+  display: flex;
+  align-items: center;
+  box-shadow: 15rpx 15rpx 30rpx rgba(0, 0, 0, 0.2);
+  padding-left: 20rpx;
+  z-index: 10;
+}
+.controlPanel icon {
+  color: white;
+  font-size: 50rpx;
+}
+.itemcontainer {
+  z-index: 9;
+  position: absolute;
+  display: flex;
+  color: white;
+  font-size: 36rpx;
+  align-items: center;
+  box-shadow: 15rpx 15rpx 30rpx rgba(0, 0, 0, 0.2);
+  background-color: #8082F6;
+  height: 100rpx;
+  padding: 10rpx 10rpx 10rpx 70rpx;
+  line-height: 36rpx;
+  vertical-align: middle;
+  width: 400rpx;
+  margin-top: 50rpx;
+  border-radius: 0 50rpx 50rpx 0;
+  left: -750rpx;
+}
+.itemcontainer .colorblock {
+  height: 40rpx;
+  width: 160rpx;
+  border-radius: 20rpx;
+  background-color: white;
+  margin: 0 30rpx;
+}
+.itemcontainer input {
+  height: 40rpx;
+  background-color: #6D6FC6;
+  border: none;
+  width: 0;
+}
+.AddPanel {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  bottom: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.AddPanel .addbuttonorgin {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  background-color: #8082F6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  box-shadow: 15rpx 15rpx 30rpx rgba(0, 0, 0, 0.2);
+  font-size: 50rpx;
+}
+.AddPanel {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  bottom: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.AddPanel .addContainer1 {
+  height: 1000rpx;
+  width: 600rpx;
+  border-radius: 25rpx;
+  background-color: #8082F6;
+  padding: 30rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 15rpx 15rpx 30rpx rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+.AddPanel .addContainer1 .header {
+  position: absolute;
+  z-index: 10;
+  top: -80rpx;
+  height: 160rpx;
+  width: 160rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6D6FC6;
+  border-radius: 80rpx;
+}
+.AddPanel .addContainer1 .header icon {
+  font-size: 96rpx;
+  color: white;
+}
+.AddPanel .addContainer1 .inputcontainer {
+  font-size: 48rpx;
+  color: white;
+  width: 100%;
+  margin-top: 80rpx;
+  margin-bottom: 30rpx;
+}
+.AddPanel .addContainer1 .inputcontainer input {
+  margin-top: 15rpx;
+  width: 100%;
+  background-color: #6D6FC6;
+  height: 80rpx;
+  border-radius: 20rpx;
+  border: none;
+  padding: 20rpx;
+}
+.AddPanel .addContainer1 .detailcontainer {
+  font-size: 48rpx;
+  color: white;
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+.AddPanel .addContainer1 .detailcontainer textarea {
+  margin-top: 15rpx;
+  width: 500rpx;
+  background-color: #6D6FC6;
+  border-radius: 20rpx;
+  border: none;
+  padding: 20rpx;
+}
+.AddPanel .addContainer1 .emergcontainer {
+  font-size: 48rpx;
+  color: white;
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+.AddPanel .addContainer1 .emergcontainer .valuecontainer {
+  margin-top: 15rpx;
+  height: 40rpx;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 25rpx;
+}
+.AddPanel .addContainer1 .emergcontainer .valuecontainer .value {
+  float: right;
+  height: 40rpx;
+  width: 60rpx;
+  border-radius: 25rpx;
+  background-color: #FFA3A3;
+}
+.AddPanel .addContainer1 .addbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.AddPanel .addContainer1 .addbutton icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  font-size: 48rpx;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 80rpx;
+  margin: 0 50rpx;
+}
+.AddPanel .addContainer2 {
+  width: 600rpx;
+  padding: 30rpx 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  font-size: 48rpx;
+  color: #6D6FC6;
+  text-align: center;
+}
+.AddPanel .addContainer2 input {
+  margin: 15rpx 0;
+  width: 100%;
+  background-color: var(--themeColor);
+  height: 100rpx;
+  border-radius: 30rpx;
+  border: none;
+  padding: 20rpx;
+  color: white;
+  box-shadow: 15rpx 15rpx 30rpx rgba(0, 0, 0, 0.2);
+}
+.AddPanel .addContainer2 textarea {
+  margin: 15rpx 0;
+  width: 560rpx;
+  background-color: #8082F6;
+  border-radius: 30rpx;
+  border: none;
+  padding: 20rpx;
+  color: white;
+  box-shadow: 15rpx 15rpx 30rpx rgba(0, 0, 0, 0.2);
+}
+.AddPanel .addContainer2 .emergcontainer {
+  width: 100%;
+  background-color: #8082F6;
+  height: 100rpx;
+  border-radius: 50rpx;
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  margin: 15rpx 0;
+  box-shadow: 15rpx 15rpx 30rpx rgba(0, 0, 0, 0.2);
+}
+.AddPanel .addContainer2 .emergcontainer .valuecontainer {
+  height: 40rpx;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 25rpx;
+}
+.AddPanel .addContainer2 .emergcontainer .valuecontainer .value {
+  float: right;
+  height: 40rpx;
+  width: 60rpx;
+  border-radius: 25rpx;
+  background-color: #FFA3A3;
+}
+.AddPanel .addContainer2 .addbutton {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 45rpx;
+  width: 60%;
+}
+.AddPanel .addContainer2 .addbutton .addicon {
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #8082F6;
+  border-radius: 50rpx;
+  box-shadow: 15rpx 15rpx 30rpx rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.AddPanel .addContainer2 .addbutton .addicon icon {
+  font-size: 64rpx;
+  color: white;
+}
+.AddPanel .addContainer2 .addbutton .cancelicon {
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #8082F6;
+  border-radius: 50rpx;
+  box-shadow: 15rpx 15rpx 30rpx rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.AddPanel .addContainer2 .addbutton .cancelicon icon {
+  font-size: 64rpx;
+  color: white;
+}
+.mask {
+  height: 100%;
+  width: 100%;
+  background-color: #C0ECFF;
+  position: fixed;
+  z-index: 8;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mask icon {
+  margin-top: 50rpx;
+  font-size: 200rpx;
+  color: var(--secondColor);
+}
+.mask .text {
+  margin-top: 50rpx;
+  font-weight: bold;
+  font-size: 80rpx;
+  color: var(--secondColor);
+}
+.wow {
+  animation: haha 0.8s ease-out;
+}
+.owo {
+  animation: heihei 0.8s ease-out;
+}
+.addMoveleft {
+  animation: addMoveleft 0.2s ease-out;
+  animation-fill-mode: forwards;
+}
+.addMoveright {
+  animation: addMoveright 0.2s ease-out;
+  animation-fill-mode: forwards;
+}
+.del {
+  transform: translateX(-100rpx);
+  transition: all 0.2s ease-out;
+}
+.totop {
+  transform: translateX(100rpx);
+  transition: all 0.2s ease-out;
+}
+.show {
+  animation: showAni 0.2s ease-out;
+  animation-fill-mode: forwards;
+}
+.hide {
+  animation: hideAni 0.2s ease-out;
+  animation-fill-mode: forwards;
+}
+.buttonup {
+  animation: buttonup 0.2s ease-out;
+  animation-fill-mode: forwards;
+}
+.buttondown {
+  animation: buttondown 0.2s ease-out;
+  animation-fill-mode: forwards;
+}
+.controlleft {
+  animation: controlleft 0.2s ease-out;
+  animation-fill-mode: forwards;
+}
+.controlright {
+  animation: controlright 0.2s ease-out;
+  animation-fill-mode: forwards;
+}
+@keyframes showAni {
+  0% {
+    height: 100rpx;
+  }
+  80% {
+    height: 420rpx;
+  }
+  100% {
+    height: 400rpx;
+  }
+}
+@keyframes hideAni {
+  from {
+    height: 400rpx;
+  }
+  to {
+    height: 100rpx;
+  }
+}
+@keyframes addMoveleft {
+  0% {
+    right: -750rpx;
+  }
+  80% {
+    right: 50rpx;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes addMoveright {
+  from {
+    right: 0;
+  }
+  to {
+    right: -750rpx;
+  }
+}
+@keyframes buttonup {
+  0% {
+    bottom: -120rpx;
+  }
+  80% {
+    bottom: 100rpx;
+  }
+  100% {
+    bottom: 80rpx;
+  }
+}
+@keyframes buttondown {
+  from {
+    bottom: 80rpx;
+  }
+  to {
+    bottom: -120rpx;
+  }
+}
+@keyframes controlleft {
+  0% {
+    left: -50rpx !important;
+  }
+  to {
+    left: -800rpx;
+  }
+}
+@keyframes controlright {
+  0% {
+    left: -800rpx;
+  }
+  80% {
+    left: 0rpx;
+  }
+  100% {
+    left: -50rpx;
+  }
+}
+@keyframes heihei {
+  0% {
+    right: -100rpx;
+  }
+  50% {
+    right: -300rpx;
+  }
+  100% {
+    right: -100rpx;
+  }
+}
+@keyframes haha {
+  0% {
+    right: -100rpx;
+  }
+  50% {
+    right: -300rpx;
+  }
+  100% {
+    right: -100rpx;
+  }
+}
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

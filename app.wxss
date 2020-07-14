@@ -1,0 +1,12 @@
+@import 'style/iconfont.wxss';
+
+page{
+
+  --themeColor:#8082F6;
+  --backGroundColor:#C0ECFF;
+  --deputyColor:#FFA3A3;
+  --secondColor:#6D6FC6;
+  
+  font-size: 28rpx;
+
+}

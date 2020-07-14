@@ -1,0 +1,185 @@
+<view class="top">
+  <view class="container" bindtap="changesort">
+    {{sort?'时间顺序':'紧急程度'}}
+  </view>
+</view>
+
+<view class="list">
+
+  <!-- toplist -->
+  <view 
+  class="both {{item.show?'show':'hide'}}"
+  wx:for="{{toplist}}"
+  wx:key="index"
+  wx:for-index="idx"
+  >
+    
+    <view
+    class="listcontainer {{item.tag}}"
+    bindtouchstart="heihei"
+    bindtouchend="haha"
+    data-idx="{{idx}}"
+    data-istop="{{item.istop}}"
+    >
+      <icon class="iconfont icon-note"></icon>
+      <view class="title">{{item.title}}</view>
+      <view class="valuecontainer" catchtap="change">
+        <view class="value" style="width:{{item.length}}%"></view>
+      </view>
+    </view>
+
+    <view class="background {{item.show?'show':'hide'}}">
+
+      <view class="iconcontainer" style="{{item.show?'opacity: 0;':''}}">
+        <icon class="iconfont icon-zhiding"bindtap="totop" data-idx="{{idx}}" data-istop="{{item.istop}}" style="transform: rotate(180deg);"></icon>
+      <icon class="iconfont icon-lajitong" bindtap="del" data-time="{{item.time}}" data-istop="{{item.istop}}"></icon>
+      </view>
+
+      <view class="detail" wx:if="{{item.show}}">{{item.detail}}</view>
+      <view class="time" wx:if="{{item.show}}">{{item.time}}</view>
+      
+    </view>
+
+
+  </view>
+
+  <!-- orglist -->
+  <view 
+  class="both {{item.show?'show':'hide'}}"
+  wx:for="{{notes}}"
+  wx:key="index"
+  wx:for-index="idx"
+  >
+    
+    <view
+    class="listcontainer {{item.tag}}"
+    bindtouchstart="heihei"
+    bindtouchend="haha"
+    data-idx="{{idx}}"
+    data-istop="{{item.istop}}"
+    >
+      <icon class="iconfont icon-note"></icon>
+      <view class="title">{{item.title}}</view>
+      <view class="valuecontainer" catchtap="change">
+        <view class="value" style="width:{{item.length}}%"></view>
+      </view>
+    </view>
+
+    <view class="background {{item.show?'show':'hide'}}">
+
+      <view class="iconcontainer" style="{{item.show?'opacity: 0;':''}}">
+        <icon class="iconfont icon-zhiding"bindtap="totop" data-idx="{{idx}}" data-istop="{{item.istop}}" ></icon>
+      <icon class="iconfont icon-lajitong" bindtap="del" data-time="{{item.time}}" data-istop="{{item.istop}}" ></icon>
+      </view>
+
+      <view class="detail" wx:if="{{item.show}}">{{item.detail}}</view>
+      <view class="time" wx:if="{{item.show}}">{{item.time}}</view>
+      
+    </view>
+
+
+  </view>
+  
+  <span wx:if="{{notes.length == 0 && toplist.length == 0}}" class="iconfont icon-Singapore"></span>
+  <span wx:if="{{notes.length == 0 && toplist.length == 0}}" class="wenben">还没写笔记？</span>
+  <span wx:if="{{notes.length == 0 && toplist.length == 0}}" class="wenben">据说多一条笔记</span>
+  <span wx:if="{{notes.length == 0 && toplist.length == 0}}" class="wenben">多一份幸运</span>
+
+</view>
+
+<view class="AddPanel {{mask?'buttondown':'buttonup'}}">
+  <icon class="iconfont icon-add002 addbuttonorgin" wx:if="{{!add}}" bindtap="showpanel"></icon>
+</view>
+
+<view class="AddPanel {{add?'addMoveleft':'addMoveright'}}">
+
+  <view class="addContainer1" wx:if="{{addmodel}}">
+
+    <view class="header">
+      <icon class="iconfont icon-note"></icon>
+    </view>
+
+    <view class="inputcontainer">
+
+      标题内容
+      <input value="{{temp.title}}" onchange="changetitle"></input>
+
+    </view>
+
+    <view class="detailcontainer">
+
+      详细内容
+      <textarea value="{{temp.detail}}" oninput="changedetail"></textarea>
+
+    </view>
+
+    <view class="emergcontainer">
+
+      紧急情况
+      <view class="valuecontainer" bindtouchend="change">
+        <view class="value" style="width:{{temp.length}}%;"></view>
+      </view>
+
+    </view>
+
+      <view class="addbutton">
+        <icon class="iconfont icon-add002"  bindtap="add"></icon>
+        <icon class="iconfont icon-lajitong"  bindtap="cancel"></icon>
+      </view>
+
+  </view>
+  
+  <view class="addContainer2" wx:else>
+
+    标题内容
+    <input value="{{temp.title}}" onchange="changetitle" value="{{value}}"></input>
+
+    详细内容
+    <textarea value="{{temp.detail}}" oninput="changedetail" value="{{value}}"></textarea>
+
+    紧急程度
+    <view class="emergcontainer">
+
+      <view class="valuecontainer" bindtouchend="change">
+        <view class="value" style="width:{{temp.length}}%;"></view>
+      </view>
+
+    </view>
+
+    <view class="addbutton">
+
+      <view class="addicon"  bindtap="add">
+        <icon class="iconfont icon-add002"></icon>
+      </view>
+
+      <view class="cancelicon"  bindtap="cancel">
+        <icon class="iconfont icon-lajitong"></icon>
+      </view>
+        
+    </view>
+
+  </view>
+  
+</view>
+
+<view class="controlPanel {{control?'wow':'owo'}}" bindtap="control">
+  <icon class="iconfont icon-setting" wx:if="{{!control}}"></icon>
+  <icon class="iconfont icon-add002" wx:else style="transform: rotate(45deg);"></icon>
+</view>
+
+<view class="itemcontainer {{control?'controlright':'controlleft'}}" wx:for="{{panellist}}" wx:key="index" wx:for-index="idx"
+style="width:{{item.check?'600rpx':'450rpx'}}; top:calc({{idx}} * 150rpx + 200rpx); animation-delay: calc({{idx}} * 0.2s);">
+
+  {{item.name}}
+
+  <view class="colorblock" bindtap="changecolor" data-idx="{{idx}}" style="background-color: #{{item.value}};"></view>
+  <input style="width:{{item.check?'130rpx':'0'}};" oninput="oninputtt" data-idx="{{idx}}" maxlength="6"></input>
+
+</view>
+
+
+<view class="mask" style="left:{{mask?'0':'-750rpx'}};">
+  <icon class="iconfont icon-yuxingcao" hidden="{{control}}"></icon>
+  <view hidden="{{!control}}" class="text">Control Panel</view>
+  <icon class="iconfont icon-setting" hidden="{{!control}}" style="margin-top: 370rpx; margin-left: 400rpx;animation:rotating 4s linear infinite; transform-origin: 100rpx 100rpx; "></icon>
+</view>
